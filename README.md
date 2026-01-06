@@ -35,4 +35,15 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 
-thankyou.
+## Environment Segregation & Secure Secret Management
+
+This project uses separate environment configurations for development, staging, and production
+to ensure isolation between environments.
+
+Each environment has its own variables, preventing staging or test credentials from being used
+in production deployments.
+
+All environment files are ignored using `.gitignore`, ensuring secrets are never committed to GitHub.
+During CI/CD execution, secrets are injected securely, preventing issues like the ShopLite case
+where staging credentials overwrote production data.
+ 
